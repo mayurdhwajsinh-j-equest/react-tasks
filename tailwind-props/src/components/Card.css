@@ -1,0 +1,44 @@
+.main-div
+{
+    margin: 10px;
+}
+
+.div1{
+    position: relative;
+    background-color: aliceblue;
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.img1
+{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+}
+
+.h1-cls
+{
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 35%;
+    font-weight: bolder;
+}
+
+.p-cls
+{
+    color: black;
+    position: absolute;
+    top: 150px;
+    font-weight : 400;
+}
+
+.btn-cls
+{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 90%;
+}
