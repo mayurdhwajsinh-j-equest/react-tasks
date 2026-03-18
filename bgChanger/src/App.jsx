@@ -1,27 +1,38 @@
 import { useState } from "react"
-import "./components/Btn.jsx"
 import Btn from "./components/Btn.jsx"
 
 function App() {
-  const [color, setColor] = useState("" || "gray")
+  const [color, setColor] = useState("gray");
   console.log("color", color)
-  const bodyColor = color?.btnText
+  const bodyColor = color;
+
+  const colors = ["red", "green", "blue", "gray"];
+
+  const temp = colors.map((clr) => (
+  <Btn
+    key={clr}
+    btnText={clr}
+    setColor={setColor}
+    btnBg={clr}
+    activeColor={color}
+  />
+));
 
   return (
-        <div
-          className="w-full min-h-screen transition-all duration-200"
-          style={{ backgroundColor: bodyColor }}
-        >
+    <div
+      className="w-full min-h-screen transition-all duration-200"
+      style={{ backgroundColor: bodyColor }}
+    >
 
-          <div className="heading">
-                <h1>Hello World...!!!</h1>
-              </div>
+      <div className="heading">
+        <h1>Hello World...!!!</h1>
+      </div>
 
-          <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-            <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
-              
+      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+        <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+          {temp}
 
-              {/* <button
+          {/* <button
                 onClick={() => setColor("red")}
                 className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
                 style={{ backgroundColor: "red" }}
@@ -44,13 +55,13 @@ function App() {
               >
               Blue
               </button> */}
-              <Btn
+          {/* <Btn
                 btnText="red"
                 btnBg="red"
                 setColor={setColor}
-              />
-          
-              <Btn
+              /> */}
+
+          {/* <Btn
                 btnText="black"
                 btnBg="black"
                 setColor={setColor}
@@ -65,10 +76,10 @@ function App() {
                 setColor={setColor}
                 btnText="gray"
                 btnBg="gray"
-              />
-         </div>
-       </div>
-     </div> 
+              /> */}
+        </div>
+      </div>
+    </div>
 
   )
 }
